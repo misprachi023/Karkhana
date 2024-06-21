@@ -153,7 +153,31 @@ const products = [
     category: "Artisan Tea",
     image:
       "https://assets-global.website-files.com/619e8d2e8bd4838a9340a810/64c590c754d6bc13ebd90cbc_ai_product_photo_styles.webp",
-  }, // Add more products with appropriate categories
+  }, 
+  {
+    id: 20,
+    name: "GIMBER N°2 700 ml",
+    price: 25.85,
+    category: "Beverage",
+    image:
+      "https://assets-global.website-files.com/619e8d2e8bd4838a9340a810/64c590c754d6bc13ebd90cbc_ai_product_photo_styles.webp",
+  },
+  {
+    id: 21,
+    name: "GIMBER N°2 700 ml",
+    price: 25.85,
+    category: "Ice Mojito",
+    image:
+      "https://assets-global.website-files.com/619e8d2e8bd4838a9340a810/64c590c754d6bc13ebd90cbc_ai_product_photo_styles.webp",
+  },
+  {
+    id: 22,
+    name: "GIMBER N°2 700 ml",
+    price: 25.85,
+    category: "Hot Coffee",
+    image:
+      "https://assets-global.website-files.com/619e8d2e8bd4838a9340a810/64c590c754d6bc13ebd90cbc_ai_product_photo_styles.webp",
+  },
 ];
 
 const ProductList = ({ addToCart, selectedCategory, searchQuery }) => {
