@@ -8,10 +8,6 @@ const CartSummary = ({ cartItems }) => {
 
   return (
     <div className="cart-summary">
-      <div className="customer-details">
-      <input className='customer' type="text" placeholder="Customer Name..." />
-      <button className="fill-name-btn">Fill Name</button>
-      </div>
       <h2>Cart Summary</h2>
       {cartItems.map((item, index) => (
         <div key={index} className="cart-item">
@@ -24,7 +20,7 @@ const CartSummary = ({ cartItems }) => {
         <span>${subtotal.toFixed(2)}</span>
       </div>
       <div className="summary-detail">
-        <span>Discount(10%) </span>
+        <span>Discount (10%)</span>
         <span>-${discount.toFixed(2)}</span>
       </div>
       <div className="summary-detail">
