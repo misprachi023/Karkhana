@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Box, Flex } from '@chakra-ui/react';
 import Header from './components/Header';
 import ProductCategory from './components/ProductCategory';
 import ProductList from './components/ProductList';
@@ -19,16 +20,18 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className='left-sie'>
+    <Box p={4}>
       <Header onSearch={handleSearch} />
-      <ProductCategory selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-      <ProductList addToCart={addToCart} selectedCategory={selectedCategory} searchQuery={searchQuery} />
-      </div>
-      <div className="content">
-        <CartSummary cartItems={cartItems} />
-      </div>
-    </div>  
+      <Flex direction={{ base: 'column', md: 'row' }}>
+        <Box flex="1">
+          <ProductCategory selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+          <ProductList addToCart={addToCart} selectedCategory={selectedCategory} searchQuery={searchQuery} />
+        </Box>
+        <Box flex={{ base: '1', md: '0.3' }} mt={{ base: 4, md: 0 }}>
+          <CartSummary cartItems={cartItems} />
+        </Box>
+      </Flex>
+    </Box>
   );
 }
 

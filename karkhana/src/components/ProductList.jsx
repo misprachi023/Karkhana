@@ -1,6 +1,6 @@
-import React from "react";
-import ProductCard from "./ProductCard";
-
+import React from 'react';
+import { SimpleGrid } from '@chakra-ui/react';
+import ProductCard from './ProductCard';
 const products = [
   {
     id: 1,
@@ -179,24 +179,19 @@ const products = [
       "https://assets-global.website-files.com/619e8d2e8bd4838a9340a810/64c590c754d6bc13ebd90cbc_ai_product_photo_styles.webp",
   },
 ];
-
 const ProductList = ({ addToCart, selectedCategory, searchQuery }) => {
   const filteredProducts = products.filter((product) => {
-    const matchesCategory = selectedCategory
-      ? product.category === selectedCategory
-      : true;
-    const matchesSearch = product.name
-      .toLowerCase()
-      .includes(searchQuery.toLowerCase());
+    const matchesCategory = selectedCategory ? product.category === selectedCategory : true;
+    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
   return (
-    <div className="product-list">
+    <SimpleGrid columns={[1, 2, 3,4]} spacing={4}>
       {filteredProducts.map((product) => (
-        <ProductCard key={product.id} product={product} addToCart={addToCart} />
+        <ProductCard  key={product.id} product={product} addToCart={addToCart} />
       ))}
-    </div>
+    </SimpleGrid>
   );
 };
 
